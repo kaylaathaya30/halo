@@ -1,0 +1,114 @@
+body{
+    background-color: #dbd4c9;
+    font-size: 16px;
+    color: #444;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content{
+    width: 80%;
+    margin: 10px auto;
+}
+
+header{
+    background-image: url("tea.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 10px;
+    border-radius: 5px;
+    border: 1px solid #30200c;
+    margin-bottom: 10px;;
+}
+
+header h1.judul,
+header h3.deskripsi{
+    text-align: center;
+    color: #ffffff;
+}
+
+/*menu navigasi*/
+.nav ul li a {
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #30200c;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+    padding-left: 170px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.nav{
+    background-color:  #a99477;
+    border: 1px solid  #30200c;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+div.nav ul {
+   list-style: none;
+   overflow: hidden;
+}
+
+
+div.nav ul li {
+    float: left;
+    text-transform: uppercase;
+}
+
+div.nav ul li a:hover,
+div.nav ul li a.hoverover {
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+
+div.badan{
+    background-color: #f4ede3; 
+    border-radius: 5px;
+    border: 1px solid #30200c;
+    margin-bottom: 10px;  
+}
+
+div.box{
+    text-align: center;
+    margin-bottom: 60px;
+    
+}
+
+.box h2{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+div.halaman{
+    text-align: center;
+    margin: 120px 100px;
+    color: #30200c;
+}
+
+div.all{
+    padding-bottom: 20px;
+    color: #30200c;
+}
+
+table{
+    text-align: center;
+    margin: 20px 30px;
+    margin-left: 150px;
+    color: #30200c;
+}
+
+table th, td {
+    border: 1px solid rgb(104, 57, 3);
+}
+
+table th {
+    background-color:  #a99477 ;
+    color: #30200c;
+}
+
