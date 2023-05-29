@@ -3,23 +3,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Login</title>
-    <link rel="stylesheet" href="css/stylee.css" type="text/css" />
+    <link rel="stylesheet" href="register.css" type="text/css" />
     <link 
     href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Roboto+Condensed&display=swap" 
     rel="stylesheet"
     />
 </head>
 <body>
-    <div class="container-login">
-        <h2 style="margin-top: 100px">Form Login</h2>
-        <form action="" method="post">
+    <div class="headd">
+        <header>
+            <h1 class="judul"> KATHA TEA </h1>
+            <h3 class="deskripsi"> Choose your best tea! </h3>
+        </header>
+    </div>
+    <div class="login">
+        <h2>Form Login</h2>
+        <form action="index.php" method="post">
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email"><br>
             <label for="password">Password:</label>
-            <input type="password" name="password" id="password">
-            <input type="submit" name="Login">
+            <input type="password" name="password" id="password"><br>
+            <input type="submit" value="Login">
         </form>
-        <p> Belum Punya akun? <a href="form_register.php" target="blank">Register</a></p>
+    </div>
+    <div class=konfir>
+        <p> <b> Belum Punya Akun? <a href="form_register.php" target="blank">Register</a> </b> </p>
     </div>
 </body>
 </html>

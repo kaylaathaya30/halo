@@ -1,0 +1,89 @@
+body {
+    background-color: #dbd4c9;
+    font-size: 16px;
+    color: #30200c;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* PEMBELI */
+
+div.pembeli {
+    background-color: #f4ede3;
+    text-align: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding-bottom: 130px;
+    padding-top: 130px;
+    font-size: medium;
+    border: 1px solid  #30200c;
+}
+
+div.head header {
+    background-image: url("tea.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 10px;
+    border-radius: 8px;
+    border: 1px solid #30200c;
+    /* margin-bottom: 10px; */
+    margin-top: 110px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+div.head header h1.judul,
+header h3.deskripsi{
+    text-align: center;
+    color: #ffffff;
+}
+
+div.pembeli h2 {
+    font-style: italic;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 40px;
+}
+
+/* TRANSAKSI */
+div.transaksi {
+    background-color: #f4ede3;
+    text-align: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    padding-bottom: 130px;
+    padding-top: 130px;
+    font-size: medium;
+    border: 1px solid  #30200c;
+}
+
+div.head header {
+    background-image: url("tea.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px 10px;
+    border-radius: 8px;
+    border: 1px solid #30200c;
+    /* margin-bottom: 10px; */
+    margin-top: 110px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+div.head header h1.judul,
+header h3.deskripsi{
+    text-align: center;
+    color: #ffffff;
+}
+
+div.transaksi h2 {
+    font-style: italic;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 40px;
+}

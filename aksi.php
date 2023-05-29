@@ -1,125 +1,163 @@
 <?php
-require "db.php";
+require "koneksi.php";
 $aksi = $_GET['action'];
 
 switch ($aksi) {
-    // aksi untuk insert ke data buku
-    case 'insert_book':
-        //insertBook($nama_buku,$pengarang,$harga)
-        $nama_buku = $_POST['nama_buku'];
-        $pengarang = $_POST['pengarang'];
-        $harga = $_POST['harga'];
-        $result = insertBook($nama_buku,$pengarang,$harga);
+    // aksi untuk insert ke data teh
+    case 'insert_teh':
+        //insertTeh($nama_teh,$harga_teh)
+        $nama_teh = $_POST['nama_teh'];
+        $harga_teh = $_POST['harga_teh'];
+        $gambar = $_POST['gambar'];
+        $result = insertTeh($gambar, $nama_teh, $harga_teh);
         if ($result) {
-            $msg = "Tambah Buku Berhasil";
-            $loc = "data_buku.php";
+            $msg = "Tambah Teh Berhasil";
+            $loc = "index.php?page=data_teh";
         } else {
-            $msg = "Tambah Buku Gagal";
-            $loc = "data_buku.php";
+            $msg = "Tambah Teh Gagal";
+            $loc = "index.php?page=data_teh";
         }
         break;
 
-    // aksi untuk edit data buku
-    case 'update_book':
-        // $id_buku = $_POST['id_buku'];
-        // $nama_buku = $_POST['nama_buku'];
-        // $pengarang = $_POST['pengarang'];
-        // $harga = $_POST['harga'];
-        // $result = updateBook($id_buku, $nama_buku, $pengarang, $harga);
-        $result = updateBook($_POST['id_buku'], $_POST['nama_buku'], $_POST['pengarang'], $_POST['harga']);
+    // aksi untuk edit data teh
+    case 'update_teh':
+        // $id_teh = $_POST['id_teh'];
+        // $nama_teh = $_POST['nama_teh'];
+        // $harga_teh = $_POST['harga_teh'];
+        // $result = updateTeh($id_teh, $nama_teh, $harga_teh);
+        $result = updateTeh($_POST['id_teh'], $_POST['nama_teh'], $_POST['harga_teh'], $_POST['gambar']);
         if ($result) {
-            $msg = "Edit Buku Berhasil";
-            $loc = "data_buku.php";
+            $msg = "Edit Teh Berhasil";
+            $loc = "index.php?page=data_teh";
         } else {
-            $msg = "Edit Buku Gagal";
-            $loc = "data_buku.php";
+            $msg = "Edit Teh Gagal";
+            $loc = "index.php?page=data_teh";
         }
         break;
-    //aksi untuk delete data buku
-    case 'delete_book':
-        $result = deleteBook($_GET['id_buku']);
+    //aksi untuk delete data teh
+    case 'delete_teh':
+        $result = deleteTeh($_GET['id_teh']);
         if ($result) {
-            $msg = "Hapus Buku Berhasil";
-            $loc = "data_buku.php";
+            $msg = "Hapus Teh Berhasil";
+            $loc = "index.php?page=data_teh";
         } else {
-            $msg = "Hapus Buku Gagal";
-            $loc = "data_buku.php";
+            $msg = "Hapus Teh Gagal";
+            $loc = "index.php?page=data_teh";
         }
         break;
     //aksi untuk insert data pelanggan
-    case 'insert_customer':
-        $result = insertCustomers($_POST['nama_pelanggan'], $_POST['email'], $_POST['no_hp']);
+    case 'insert_pembeli':
+        $result = insertPembeli($_POST['nama_pembeli'], $_POST['alamat'], $_POST['email']);
         if ($result) {
             $msg = "Tambah Pelanggan Berhasil";
-            $loc = "data_pelanggan.php";
+            $loc = "index.php?page=data_pembeli";
         } else {
             $msg = "Tambah Pelanggan Gagal";
-            $loc = "data_pelanggan.php";
+            $loc = "index.php?page=data_pembeli";
         }
         break;
     //aksi untuk edit data pelanggan
-    case 'update_customer':
-        $result = updateCustomer($_POST['id_pelanggan'], $_POST['nama_pelanggan'], $_POST['email'], $_POST['no_hp']);
+    case 'update_pembeli':
+        $result = updatePembeli($_POST['id_pembeli'], $_POST['nama_pembeli'], $_POST['alamat'], $_POST['email']);
         if ($result) {
             $msg = "Edit Pelanggan Berhasil";
-            $loc = "data_pelanggan.php";
+            $loc = "index.php?page=data_pembeli";
         } else {
             $msg = "Edit Pelanggan Gagal";
-            $loc = "data_pelanggan.php";
+            $loc = "index.php?page=data_pembeli";
         }
         break;
     //aksi untuk delete data pelanggan
-    case 'delete_customer':
-        $result = deleteCustomer($_GET['id_pelanggan']);
+    case 'delete_pembeli':
+        $result = deletePembeli($_GET['id_pembeli']);
         if ($result) {
             $msg = "Hapus Pelanggan Berhasil";
-            $loc = "data_pelanggan.php";
+            $loc = "index.php?page=data_pembeli";
         } else {
             $msg = "Hapus Pelanggan Gagal";
-            $loc = "data_pelanggan.php";
+            $loc = "index.php?page=data_pembeli";
         }
         break;
     //aksi untuk insert data transaksi
-    case 'insert_transaction':
-        $id_buku = $_POST['id_buku'];
-        $row = getHargaBuku($id_buku);
-        $harga = $row['harga'];
-        $total_harga = $harga * $_POST['kuantitas'];
-        $result = insertTransaction($_POST['id_pelanggan'], $_POST['id_buku'], $_POST['kuantitas'], $harga, $total_harga);
+    case 'insert_transaksi':
+        $id_teh = $_POST['id_teh'];
+        $row = getHargaTeh($id_teh);
+        $harga_teh = $row['harga_teh'];
+        $total_pembayaran = $harga_teh * $_POST['jumlah'];
+        $result = insertTransaksi($_POST['id_pembeli'], $_POST['id_teh'], $_POST['jumlah'], $harga_teh, $total_pembayaran);
         if ($result) {
             $msg = "Tambah Transaksi Berhasil";
-            $loc = "data_transaksi.php";
+            $loc = "index.php?page=data_transaksi";
         } else {
             $msg = "Tambah Transaksi Gagal";
-            $loc = "data_transaksi.php";
+            $loc = "index.php?page=data_transaksi";
         }
         break;
     //aksi untuk edit data transaksi
-    case 'update_transaction':
-        $id_buku = $_POST['id_buku'];
-        $row = getHargaBuku($id_buku);
-        $harga = $row['harga'];
-        $total_harga = $harga * $_POST['kuantitas'];
-        $result = updateTransaction($_POST['id_transaksi'], $_POST['id_pelanggan'], $_POST['id_buku'], $_POST['kuantitas'], $harga, $total_harga);
+    case 'update_transaksi':
+        $id_teh = $_POST['id_teh'];
+        $row = getHargaTeh($id_teh);
+        $harga_teh = $row['harga_teh'];
+        $total_pembayaran = $harga_teh * $_POST['jumlah'];
+        $result = updateTransaksi($_POST['id_transaksi'], $_POST['id_pembeli'], $_POST['id_teh'], $_POST['jumlah'], $harga_teh, $total_pembayaran);
         if ($result) {
             $msg = "Edit Transaksi Berhasil";
-            $loc = "data_transaksi.php";
+            $loc = "index.php?page=data_transaksi";
         } else {
             $msg = "Edit Transaksi Gagal";
-            $loc = "data_transaksi.php";
+            $loc = "index.php?page=data_transaksi";
         }
         break;       
     //aksi untuk delete data transaksi
-    case 'delete_transaction':
-        $result = deleteTransaction($_GET['id_transaksi']);
+    case 'delete_transaksi':
+        $result = deleteTransaksi($_GET['id_transaksi']);
         if ($result) {
             $msg = "Hapus Transaksi Berhasil";
-            $loc = "data_transaksi.php";
+            $loc = "index.php?page=data_transaksi";
         } else {
             $msg = "Hapus Transaksi Gagal";
-            $loc = "data_transaksi.php";
+            $loc = "index.php?page=data_transaksi";
         }
         break; 
+    //aksi untuk insert data user
+    case 'insert_user':
+        $nama_lengkap = $_POST['nama_lengkap'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $password_repeat = $_POST['password_repeat'];
+        $user = getUserByEmail($email);
+        if ($user) { 
+            $msg = "Email sudah terdaftar"; 
+            $loc = "form_register.php";
+        } else if ($password != $password_repeat) {
+            $msg = "Password Tidak Sama";
+            $loc = "form_register.php";
+        } else {
+            $password = password_hash($password, PASSWORD_BCRYPT);
+            $result = insertUser($nama_lengkap, $email, $password);
+            if ($result) {
+                $msg = "Tambah User Berhasil";
+                $loc = "form_login.php";
+            } else {
+                $msg = "Tambah User Gagal";
+                $loc = "form_register.php";
+            }
+        }
+        break; 
+    //aksi untuk login
+    case 'login_user':
+        $email = $_POST['email'];    
+        $password = md5($_POST['password']);
+        $user = getUserByEmail($email);
+        $userpass = $user ['password'];
+        if (password_verify($pasword, $userpass)) {
+            $_SESSION['email'] = $user['email'];
+            $msg = "Login Berhasil";
+            $loc = "index.php";
+        } else {
+            $msg = "Login Gagal";
+            $loc = "form_login.php";
+        }
  }
 
 if (!empty($msg)){

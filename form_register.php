@@ -2,28 +2,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Login</title>
-    <link rel="stylesheet" href="css/stylee.css" type="text/css" />
-    <link 
-    href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Roboto+Condensed&display=swap" 
-    rel="stylesheet"
-    />
+    <title>Form Register</title>
+    <link rel="stylesheet" type="text/css" href="register.css">
 </head>
 <body>
-    <div class="container-login">
-        <h2 style="margin-top: 100px">Form Register</h2>
-        <form action="" method="post">
+    <div class="head">
+        <header>
+            <h1 class="judul"> KATHA TEA </h1>
+            <h3 class="deskripsi"> Choose your best tea! </h3>
+        </header>
+    </div>
+    <div class="registrasi">
+        <h2>Form Register</h2>
+        <form action="aksi.php?action=insert_user" method="post">
+            <input type="hidden" name="id_user"/>
             <label for="nama">Nama Lengkap:</label>
-            <input type="text" name="nama" id="nama">
+            <input type="text" name="nama_lengkap" id="nama_lengkap"><br>
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email"><br>
             <label for="password">Password:</label>
-            <input type="password" name="password" id="password">
-            <label for="repeat_password">Ulangi Password:</label>
-            <input type="password" name="repeat_password" id="repeat_password">
-            <input type="submit" name="Register">
+            <input type="password" name="password" id="password"><br>
+            <label for="password_repeat">Ulangi Password:</label>
+            <input type="password" name="password_repeat" id="password_repeat"><br>
+            <input type="submit" value="Register">
         </form>
-        <p> Sudah Punya akun? <a href="form_login.php" target="blank">Login</a></p>
+    </div>
+    <div class=konfir>
+        <p> <b> Sudah Punya Akun? <a href="form_login.php" target="blank">Login</a> </b> </p>
     </div>
 </body>
 </html>
