@@ -1,17 +1,6 @@
 <?php
 require "koneksi.php";
 
-// $id_pembeli = $_GET['id_pembeli'] ?? 0 ;
-// $id_pembeli = $_GET['id_pembeli'];
-// $id_pembeli = !empty($_GET['id_pembeli']) ? $_GET['id_pembeli'] : 0;
-
-// if(isset($_GET["id_pembeli"])){
-//     $id_pembeli = $_GET["id_pembeli"];
-// } else {
-//     $id_pembeli = false;
-// }
-
-
 
 if (isset($_GET['id_pembeli']) && $_GET["id_pembeli"] > 0) {
     $id_pembeli = $_GET["id_pembeli"];
@@ -42,7 +31,7 @@ else{
 <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pembeli</title>
-    <link rel="stylesheet" href="form.css" type="text/css" />
+    <link rel="stylesheet" href="styles/form.css" type="text/css" />
 </head>
 
 <body>
@@ -55,7 +44,7 @@ else{
     <div class="pembeli">
     <h2><?= $h2 ?></h2>
     <form action="<?= $form_action ?>" method="post">
-        <input type="hidden" name="id_pembeli">
+        <input type="hidden" name="id_pembeli" value="<?=$id_pembeli?>">
         <label for="nama_pembeli">Nama Pelanggan</label>
         <input type="text" id="nama_pembeli" name="nama_pembeli" value="<?=$nama_pembeli?>"><br>
         <label for="alamat">Alamat</label>

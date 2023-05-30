@@ -16,7 +16,7 @@ function getTea(){
         $conn = conn();
         $sql = "SELECT * FROM tb_teh";
         $result = mysqli_query($conn,$sql);
-        $rows = array();
+        $rows = [];
         while ($row = mysqli_fetch_array($result)){
             $rows[] = $row;
         }
@@ -46,9 +46,9 @@ function getTransaksi(){
 }
 
 // Register & Login
-function insertUser($nama_lengkap, $email, $password){
+function insertUser($nama_lengkap, $email, $password, $role){
     $conn = conn();
-    $sql = "INSERT INTO tb_user VALUE ('', '$nama_lengkap', '$email', '$password')";
+    $sql = "INSERT INTO tb_user VALUE ('', '$nama_lengkap', '$email', '$password', '$role')";
     $result = mysqli_query($conn, $sql);
     return $result;
 }
@@ -116,7 +116,7 @@ function getPembelibyID($id_pembeli){
 
 function updatePembeli($id_pembeli, $nama_pembeli, $alamat, $email){
     $conn = conn();
-    $sql = "UPDATE tb_pembeli SET nama_pembeli ='$nama_pembeli', alamat ='$alamat', email ='$email' WHERE id_pembeli ='$id_pembeli'";
+    $sql = "UPDATE tb_pembeli SET nama_pembeli = '$nama_pembeli', alamat ='$alamat', email = '$email' WHERE id_pembeli = '$id_pembeli'";
     $result = mysqli_query($conn, $sql); 
     return $result;
 }
@@ -129,7 +129,7 @@ function deletePembeli($id_pembeli) {
 }
 
 // Transaksi
-function insertTransaksi($id_transaksi, $id_pembeli, $id_teh, $jumlah, $harga_sekarang, $total_pembayaran){
+function insertTransaksi($id_pembeli, $id_teh, $jumlah, $harga_sekarang, $total_pembayaran){
     $conn = conn();
     $sql = "INSERT INTO tb_transaksi VALUES ('', '$id_pembeli', '$id_teh', '$jumlah', '$harga_sekarang', '$total_pembayaran')";
     $result = mysqli_query($conn, $sql);

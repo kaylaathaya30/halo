@@ -1,28 +1,29 @@
 <?php
     require "koneksi.php";
 
-    if(isset($_GET["id_teh"])){
-        $id_teh = $_GET["id_teh"];
-    } else {
-        $id_teh = false;
-    }
 
-    if ($id_teh > 0) {
+    if (isset($_GET['id_teh']) && $_GET["id_teh"] > 0) {
+        $id_teh = $_GET['id_teh'];
         $row = getTehbyID($id_teh);
+        
         $id_teh = $row['id_teh'];
         $nama_teh = $row['nama_teh'];
         $harga_teh = $row['harga_teh']; 
         $gambar = $row['gambar'];
+
         $form_action = "aksi.php?action=update_teh";
         $title = "Edit Data Teh";
+        $h2 = "Edit Form Data Teh";
     }
     else {
         $id_teh = '';
         $nama_teh = '';
         $harga_teh = '';
         $gambar = '';
+        
         $form_action = "aksi.php?action=insert_teh";
         $title = "Tambah Data Teh";
+        $h2 = "Tambah Form Data Teh";
     }
     
 ?>
@@ -31,11 +32,11 @@
 <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Teh</title>
-    <link rel="stylesheet" href="css/stylee.css" type="text/css" />
+    <link rel="stylesheet" href="styles/stylee.css" type="text/css" />
 </head>
 
 <body>
-    <h2 style="margin-bottom:20px">Tambah Data Teh</h2>
+    <h2 style="margin-bottom:20px"><?= $h2 ?></h2>
     <form action= "<?=$form_action?>" method="post">
         <input type="hidden" name="id_teh" id="id_teh" value="<?=$id_teh?>" />
         <label for="nama_teh">Nama Teh :</label>

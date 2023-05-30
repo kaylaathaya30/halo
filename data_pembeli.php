@@ -33,9 +33,8 @@ require 'koneksi.php';
                 <td><?= $row['alamat']?></td>
                 <td><?= $row['email']?></td>
                 <td>
-                    <a href="form_pembeli.php?id_pembeli=<?= $row['id_pembeli']?>"> Edit</a>
-                     |
-                    <a href="aksi.php?id_pembeli=<?= $row['id_pembeli']?>&action=delete_pembeli"> Delete</a>
+                    <a href="form_pembeli.php?id_pembeli=<?= $row['id_pembeli']?>"> Edit</a> |
+                    <a href="aksi.php?id_delete=<?= $row['id_pembeli']?>&action=delete_pembeli"> Delete</a>
                 </td>
             </tr>
             <?php $i++; ?>
