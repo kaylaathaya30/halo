@@ -172,4 +172,6 @@ if (!empty($msg)){
     </script>";
 }
 
+// infokan
+
 ?>
