@@ -1,9 +1,17 @@
+<?php 
+session_start();
+if(isset($_SESSION['status'])){
+    header("Location: index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Login</title>
-    <link rel="stylesheet" href="register.css" type="text/css" />
+    <link rel="stylesheet" href="styles/register.css" type="text/css" />
     <link 
     href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Roboto+Condensed&display=swap" 
     rel="stylesheet"
@@ -18,7 +26,7 @@
     </div>
     <div class="login">
         <h2>Form Login</h2>
-        <form action="index.php" method="post">
+        <form action="aksi.php?action=login_user" method="post">
             <label for="email">Email:</label>
             <input type="email" name="email" id="email"><br>
             <label for="password">Password:</label>

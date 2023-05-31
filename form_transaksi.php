@@ -15,8 +15,10 @@
         $nama_pembeli = $row['nama_pembeli'];
         $nama_teh = $row['nama_teh'];
         $jumlah = $row['jumlah'];
+
         $form_action = "aksi.php?action=update_transaksi";
         $title = "Edit Data Transaksi";
+        $h2 = "Edit Form Data Transaksi";
     }
     else {
         $id_transaksi = '';
@@ -25,8 +27,10 @@
         $nama_pembeli = '';
         $nama_teh = '';
         $jumlah = '';
+
         $form_action = "aksi.php?action=insert_transaksi";
         $title = "Tambah Data Teh";
+        $h2 = "Tambah Form Data Transaksi";
     }
     
 ?>
@@ -36,7 +40,7 @@
 <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Penjualan</title>
-    <link rel="stylesheet" href="form.css" type="text/css" />
+    <link rel="stylesheet" href="styles/form.css" type="text/css" />
 </head>
 <body>
     <div class="head">
@@ -46,9 +50,9 @@
         </header>
     </div>
     <div class="transaksi">
-    <h2 style="margin-bottom:20px">Tambah Data Transaksi</h2>
+    <h2 style="margin-bottom:20px"><?php $h2 ?></h2>
     <form action= "<?=$form_action?>" method="post">
-        <input type="hidden" name="id_transaksi" id="id_transaksi">
+        <input type="hidden" name="id_transaksi" id="id_transaksi" value="<?= $id_transaksi ?>">
         <!-- pilih nama pelanggan -->
         <label for="nama_pembeli">Nama Pelanggan</label>
         <select name="id_pembeli" id="nama_pembeli">

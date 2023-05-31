@@ -35,7 +35,7 @@
                 <td><?= $total_pembayaran ?></td>
                 <td>
                     <a href="form_transaksi.php?id_transaksi=<?= $row['id_transaksi']?>"> Edit</a> |
-                    <a href="form_transaksi.php?id_transaksi=<?= $row['id_transaksi']?>&action=delete_transaksi"> Delete</a>
+                    <a href="aksi.php?id_delete=<?= $row['id_transaksi']?>&action=delete_transaksi"> Delete</a>
                 </td>
             </tr>
             <?php $no++?>

@@ -2,7 +2,7 @@
 <html>
     <head>
         <!--menghubungkan dengan file css-->
-        <link rel="stylesheet" type="text/css" href="stylee.css">
+        <link rel="stylesheet" type="text/css" href="styles/stylee.css">
     </head>
 
     <body>
@@ -19,6 +19,7 @@
                <li><a href="index.php?page=data_teh">MENU TEH</a></li>
                <li><a href="index.php?page=data_pembeli">DATA PELANGGAN</a></li>
                <li><a href="index.php?page=data_transaksi">DATA PENJUALAN</a></li>
+               <li><a href="logout.php">LOGOUT</a></li>
             </ul>
         </div>
         </nav>

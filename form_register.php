@@ -1,9 +1,19 @@
+<?php 
+session_start();
+if(isset($_SESSION['status'])){
+    header("Location: index.php");
+}
+
+
+
+?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Register</title>
-    <link rel="stylesheet" type="text/css" href="register.css">
+    <link rel="stylesheet" type="text/css" href="styles/register.css">
 </head>
 <body>
     <div class="head">
@@ -24,6 +34,7 @@
             <input type="password" name="password" id="password"><br>
             <label for="password_repeat">Ulangi Password:</label>
             <input type="password" name="password_repeat" id="password_repeat"><br>
+            <input type="hidden" name="role" value="user">
             <input type="submit" value="Register">
         </form>
     </div>
